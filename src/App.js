@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
  import About from './components/About';
 import Navbar from './components/Navbar';
@@ -40,21 +40,23 @@ function App() {
       document.title = "TextUtils- Light Mode";
     }
   }
-  useState(()=>{
-    document.body.backgroundColor = '#bae5ed';
-  }, []);
+ useEffect(() => {
+  document.body.style.backgroundColor = '#bae5ed';  // <-- your desired color here
+}, []);
+
   
   return (
     <>
-<Router>
+<Router basename='TextUtils'>
 <Navbar title="Learn" here="My Action" mode={mode} togglemode={togglemode} btntext={btntext}/>
 <Alert alert= {alert} />
 <div className="container my-3" >
 <Routes>       
     <Route
       path="/about"
-      element={<About/>}
+      element={<About mode={mode}/>}
     />
+    
     <Route 
       path="/"
       element= {<TextForm showalert={showalert} mode={mode} heading="Enter the text"/>}
