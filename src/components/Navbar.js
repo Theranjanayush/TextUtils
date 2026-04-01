@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 export default function Navbar(props) {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} border border-2 border-${props.mode}`}>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} border-2 border-${props.mode}`}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">{props.title}</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,15 +16,6 @@ export default function Navbar(props) {
             </li>
             
             <li className="nav-item dropdown">
-              {/* <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a> */}
-              {/* <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="/">{props.here}</a></li>
-                <li><a className="dropdown-item" href="/">Another action</a></li>
-                <li><hr className="dropdown-divider"/></li>
-                <li><a className="dropdown-item" href="/">Something else here</a></li>
-              </ul> */}
             </li>
             <li className="nav-item">
               <Link className="nav-link active" to="/about" tabIndex="-1" aria-disabled="true">Abou</Link>
@@ -52,3 +43,13 @@ Navbar.defaultProps = {
   here: "move"
 }
 
+
+{/* <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+  Dropdown
+</a> */}
+{/* <ul className="dropdown-menu">
+  <li><a className="dropdown-item" href="/">{props.here}</a></li>
+  <li><a className="dropdown-item" href="/">Another action</a></li>
+  <li><hr className="dropdown-divider"/></li>
+  <li><a className="dropdown-item" href="/">Something else here</a></li>
+</ul> */}
